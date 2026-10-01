@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Sports Hindi - Live Match</title>
+    <title>Star Sports 1 Hindi - Live</title>
+    <!-- Shaka Player for Live Stream Playback -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -60,7 +62,7 @@
             font-weight: bold;
         }
 
-        /* LIVE STREAM PLAYER */
+        /* DIRECT IN-BUILT PLAYER */
         .video-box {
             position: relative;
             padding-bottom: 56.25%;
@@ -71,13 +73,13 @@
             margin-bottom: 14px;
             border: 1px solid #1f3024;
         }
-        .video-box iframe {
+        .video-box video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
+            background: #000;
         }
 
         .action-box {
@@ -119,7 +121,6 @@
 <body>
 
 <div class="container">
-    <!-- AAPKA BRANDING HEADER -->
     <div class="header-box">
         <span class="live-badge">● LIVE NOW</span>
         <div class="title">STAR SPORTS 1 HD (HINDI)</div>
@@ -127,27 +128,49 @@
         <div class="sub-text">LIVE CRICKET STREAMS & UPDATES</div>
     </div>
 
-    <!-- DIRECT STAR SPORTS HINDI FEED -->
+    <!-- DIRECT IN-BUILT PLAYER (NO IFRAME BLOCK) -->
     <div class="video-box">
-        <iframe 
-            src="https://dekhobhai.pages.dev/HIN" 
-            allowfullscreen 
-            allow="autoplay; encrypted-media; fullscreen">
-        </iframe>
+        <video id="videoPlayer" controls autoplay playsinline></video>
     </div>
 
-    <!-- AAPKA TELEGRAM BUTTON -->
     <div class="action-box">
         <p>✈ FOLLOW US FOR MORE UPDATES</p>
         <a href="https://t.me/CricketLiveMatch24" class="btn-orange" target="_blank">✈ Join Telegram</a>
     </div>
 
-    <!-- SHARE BUTTON -->
     <div class="action-box">
         <p>🔗 SHARE STREAM</p>
         <button class="btn-orange" onclick="navigator.clipboard.writeText(window.location.href); alert('Link Copied Successfully!');">Share this page link</button>
     </div>
 </div>
+
+<script>
+    async function initApp() {
+        shaka.polyfill.installAll();
+        if (shaka.Player.isBrowserSupported()) {
+            const video = document.getElementById('videoPlayer');
+            const player = new shaka.Player(video);
+
+            // ClearKey DRM Keys for Star Sports Hindi stream
+            player.configure({
+                drm: {
+                    clearKeys: {
+                        'f9e578c74d32098492067756f1ddde48': '93b8e5c85b1bfda3039d96e578c2e912'
+                    }
+                }
+            });
+
+            try {
+                // Direct Star Sports Stream Manifest
+                await player.load('https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Hindi_MOB/Fallback/index.mpd');
+            } catch (e) {
+                // Alternate fallback stream if key rotates
+                player.load('https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Hindi_MOB/Live/index.mpd');
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', initApp);
+</script>
 
 </body>
 </html>
