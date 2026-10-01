@@ -60,11 +60,11 @@
             font-weight: bold;
         }
 
-        /* V3 CLEAN CROP: DUSRE KA HAR BUTTON AUR PROMO TEXT GAYAB */
+        /* VIDEO CONTAINER */
         .video-box {
             position: relative;
             width: 100%;
-            height: 190px;
+            height: 228px;
             overflow: hidden;
             border-radius: 12px;
             background: #000;
@@ -73,11 +73,33 @@
         }
         .video-box iframe {
             position: absolute;
-            top: -108px;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 300px;
+            height: 100%;
             border: 0;
+        }
+
+        /* OVERLAY BUTTON: NEELE BUTTON KO REPLACE KAR DIYA AAPKE TELEGRAM SE */
+        .smart-join-overlay {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 78%;
+            height: 48px;
+            z-index: 50;
+            cursor: pointer;
+            border-radius: 10px;
+            background: #2aabee;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(42, 171, 238, 0.4);
         }
 
         .action-box {
@@ -119,7 +141,7 @@
 <body>
 
 <div class="container">
-    <!-- AAPKA CHANNEL HEADER -->
+    <!-- BRANDING HEADER -->
     <div class="header-box">
         <span class="live-badge">● LIVE NOW</span>
         <div class="title">STAR SPORTS 1 HD (HINDI)</div>
@@ -127,9 +149,20 @@
         <div class="sub-text">LIVE CRICKET STREAMS & UPDATES</div>
     </div>
 
-    <!-- CLEAN VIDEO ONLY (NO EXTERNAL PROMOS) -->
-    <div class="video-box">
+    <!-- PLAYER BOX -->
+    <div class="video-box" id="playerWrap">
+        <!-- AAPKA APNA BUTTON JO DUSRE KE NEELE BUTTON KE EXACT UPAR HAI -->
+        <a href="https://t.me/CricketLiveMatch24" 
+           target="_blank" 
+           class="smart-join-overlay" 
+           id="joinBtn" 
+           onclick="bypassPopup()">
+           Join Channel Now
+        </a>
+
+        <!-- EMBED STREAM -->
         <iframe 
+            id="streamFrame"
             src="https://sports-era.github.io/Cricketvaanii/INDvsWI/" 
             allowfullscreen 
             allow="autoplay; encrypted-media; fullscreen">
@@ -142,12 +175,19 @@
         <a href="https://t.me/CricketLiveMatch24" class="btn-orange" target="_blank">✈ Join Telegram</a>
     </div>
 
-    <!-- AAPKA APNA SHARE LINK BUTTON -->
+    <!-- SHARE BUTTON -->
     <div class="action-box">
         <p>🔗 SHARE STREAM</p>
         <button class="btn-orange" onclick="navigator.clipboard.writeText(window.location.href); alert('Link Copied Successfully!');">Share this page link</button>
     </div>
 </div>
+
+<script>
+    function bypassPopup() {
+        // Click karte hi button gayab ho jayega aur video live unlock ho jayegi
+        document.getElementById('joinBtn').style.display = 'none';
+    }
+</script>
 
 </body>
 </html>
