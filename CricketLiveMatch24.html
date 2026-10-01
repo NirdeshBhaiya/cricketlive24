@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@CricketLiveMatch24 - IND VS WI Live</title>
+    <title>Star Sports Hindi - Live Match</title>
+    <!-- HLS Player CDN for live streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -69,7 +71,7 @@
             margin-bottom: 14px;
             border: 1px solid #1f3024;
         }
-        .video-box iframe {
+        .video-box video, .video-box iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -112,7 +114,7 @@
             font-size: 15px;
         }
 
-        /* --- POPUP (MODAL) --- */
+        /* POPUP MODAL */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -182,7 +184,7 @@
 </head>
 <body>
 
-<!-- POPUP BOX -->
+<!-- TELEGRAM POPUP -->
 <div class="modal-overlay" id="telegramPopup">
     <div class="modal-card">
         <div class="modal-title">
@@ -197,16 +199,17 @@
 </div>
 
 <div class="container">
+    <!-- HEADER -->
     <div class="header-box">
         <span class="live-badge">● LIVE NOW</span>
-        <div class="title">INDIA VS WEST INDIES</div>
+        <div class="title">STAR SPORTS 2 HD (HINDI)</div>
         <div class="channel-name">@CricketLiveMatch24</div>
-        <div class="sub-text">SPORTS LIVE STREAMS & UPDATES</div>
+        <div class="sub-text">LIVE CRICKET STREAMS & UPDATES</div>
     </div>
 
-    <!-- STREAM BOX -->
+    <!-- LIVE VIDEO PLAYER -->
     <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/live_stream" allowfullscreen></iframe>
+        <video id="videoPlayer" controls autoplay playsinline></video>
     </div>
 
     <!-- TELEGRAM BUTTON -->
@@ -223,12 +226,31 @@
 </div>
 
 <script>
+    // POPUP CLOSE
     function closePopup() {
         document.getElementById('telegramPopup').style.display = 'none';
     }
+
+    // SHARE LINK
     function copyStreamLink() {
         navigator.clipboard.writeText(window.location.href);
         alert('Link Copied Successfully!');
+    }
+
+    // LIVE STREAM SETUP (Agar aapke paas direct stream link / m3u8 hai to yahan replace karein)
+    var video = document.getElementById('videoPlayer');
+    var streamUrl = 'YOUR_STAR_SPORTS_STREAM_URL.m3u8';
+
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(streamUrl);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = streamUrl;
+        video.play();
     }
 </script>
 
