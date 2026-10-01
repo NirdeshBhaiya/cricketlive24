@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Live 24 - Live Channels</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #0b0f0e; color: #fff; padding: 12px; }
+    .header-card {
+      background: linear-gradient(135deg, #111a16, #16241f);
+      border: 1px solid #1f362b;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .header-card h2 { font-size: 1.2rem; color: #fff; margin-bottom: 4px; }
+    .header-card .sub { color: #f59e0b; font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+    .header-card p { font-size: 0.75rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #dc2626;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .player-container {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1px solid #222;
+    }
+    .player-container iframe { width: 100%; height: 100%; border: none; }
+    .tg-banner {
+      display: block;
+      background: #0088cc;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      color: #f59e0b;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .channel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .channel-btn {
+      background: #121815;
+      border: 1px solid #1f2e26;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: left;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s;
+    }
+    .channel-btn:hover, .channel-btn.active {
+      border-color: #f59e0b;
+    }
+    .channel-btn .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+    }
+    .channel-btn .sub-text {
+      font-size: 0.65rem;
+      color: #f59e0b;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-card">
+    <span class="badge">LIVE NOW</span>
+    <h2>CRICKET LIVE 24</h2>
+    <div class="sub">@CricketLiveMatch24</div>
+    <p>SPORTS LIVE STREAMS &amp; UPDATES</p>
+  </div>
+
+  <div class="player-container">
+    <iframe id="mainPlayer" src="https://sports-era-eight.vercel.app" allowfullscreen></iframe>
+  </div>
+
+  <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-banner">
+    👉 Join Telegram: @CricketLiveMatch24
+  </a>
+
+  <div class="section-title">📺 LIVE CHANNELS</div>
+
+  <div class="channel-grid">
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn active">
+      <div class="title">Sony Ten 1 HD ★</div>
+      <div class="sub-text">SONYLIV SPORTS</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Sony Ten 1 ★</div>
+      <div class="sub-text">SONYLIV SPORTS</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Sony Ten 2 HD ★</div>
+      <div class="sub-text">SONYLIV SPORTS</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Sony Ten 2 ★</div>
+      <div class="sub-text">SONYLIV SPORTS</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Sony Ten 3 HD ★</div>
+      <div class="sub-text">SONYLIV HINDI</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Sony Ten 3 ★</div>
+      <div class="sub-text">SONYLIV HINDI</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Sony Ten 5 HD ★</div>
+      <div class="sub-text">SONYLIV SPORTS</div>
+    </a>
+    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
+      <div class="title">Star Sports 1 Hindi ★</div>
+      <div class="sub-text">LIVE CRICKET</div>
+    </a>
+  </div>
+
+</body>
+</html>
