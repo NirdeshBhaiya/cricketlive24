@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Sports Hindi - Live Match</title>
-    <!-- HLS Player CDN for live streaming -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <title>@CricketLiveMatch24 - IND VS WI Live</title>
     <style>
         * {
             box-sizing: border-box;
@@ -71,7 +69,7 @@
             margin-bottom: 14px;
             border: 1px solid #1f3024;
         }
-        .video-box video, .video-box iframe {
+        .video-box iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -114,7 +112,7 @@
             font-size: 15px;
         }
 
-        /* POPUP MODAL */
+        /* --- POPUP (MODAL) --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -184,7 +182,7 @@
 </head>
 <body>
 
-<!-- TELEGRAM POPUP -->
+<!-- POPUP BOX -->
 <div class="modal-overlay" id="telegramPopup">
     <div class="modal-card">
         <div class="modal-title">
@@ -202,23 +200,23 @@
     <!-- HEADER -->
     <div class="header-box">
         <span class="live-badge">● LIVE NOW</span>
-        <div class="title">STAR SPORTS 2 HD (HINDI)</div>
+        <div class="title">INDIA VS WEST INDIES</div>
         <div class="channel-name">@CricketLiveMatch24</div>
-        <div class="sub-text">LIVE CRICKET STREAMS & UPDATES</div>
+        <div class="sub-text">SPORTS LIVE STREAMS & UPDATES</div>
     </div>
 
-    <!-- LIVE VIDEO PLAYER -->
+    <!-- LIVE MATCH STREAM (Sports-era source embedded directly) -->
     <div class="video-box">
-        <video id="videoPlayer" controls autoplay playsinline></video>
+        <iframe src="https://sports-era.github.io/Cricketvaanii/INDvsWI/" allowfullscreen allow="autoplay; encrypted-media"></iframe>
     </div>
 
-    <!-- TELEGRAM BUTTON -->
+    <!-- TELEGRAM BUTTON BOX -->
     <div class="action-box">
         <p>✈ FOLLOW US FOR MORE UPDATES</p>
         <a href="https://t.me/CricketLiveMatch24" class="btn-orange" target="_blank">✈ Join Telegram</a>
     </div>
 
-    <!-- SHARE BUTTON -->
+    <!-- SHARE BUTTON BOX -->
     <div class="action-box">
         <p>🔗 SHARE STREAM</p>
         <button class="btn-orange" onclick="copyStreamLink()">Share this page link</button>
@@ -226,31 +224,12 @@
 </div>
 
 <script>
-    // POPUP CLOSE
     function closePopup() {
         document.getElementById('telegramPopup').style.display = 'none';
     }
-
-    // SHARE LINK
     function copyStreamLink() {
         navigator.clipboard.writeText(window.location.href);
         alert('Link Copied Successfully!');
-    }
-
-    // LIVE STREAM SETUP (Agar aapke paas direct stream link / m3u8 hai to yahan replace karein)
-    var video = document.getElementById('videoPlayer');
-    var streamUrl = 'YOUR_STAR_SPORTS_STREAM_URL.m3u8';
-
-    if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(streamUrl);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-            video.play();
-        });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = streamUrl;
-        video.play();
     }
 </script>
 
