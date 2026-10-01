@@ -41,6 +41,7 @@
       display: inline-block;
     }
     .player-container {
+      position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
@@ -50,6 +51,19 @@
       border: 1px solid #222;
     }
     .player-container iframe { width: 100%; height: 100%; border: none; }
+    
+    .intercept-btn {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 55px;
+      background: transparent;
+      z-index: 99;
+      display: block;
+    }
+
     .tg-banner {
       display: block;
       background: #0088cc;
@@ -118,6 +132,7 @@
 
   <div class="player-container">
     <iframe id="mainPlayer" src="https://sports-era-eight.vercel.app" allowfullscreen></iframe>
+    <a href="https://t.me/CricketLiveMatch24" target="_blank" class="intercept-btn"></a>
   </div>
 
   <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-banner">
