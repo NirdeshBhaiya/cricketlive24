@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@CricketLiveMatch24 - IND VS WI Live</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: #0b110e;
             color: #ffffff;
@@ -18,10 +14,7 @@
             justify-content: center;
             padding: 15px;
         }
-        .container {
-            width: 100%;
-            max-width: 420px;
-        }
+        .container { width: 100%; max-width: 420px; }
         .header-box {
             background: #111a14;
             border: 1px solid #1f3024;
@@ -30,39 +23,20 @@
             margin-bottom: 14px;
             position: relative;
         }
-        .title {
-            font-size: 19px;
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: 0.5px;
-        }
-        .channel-name {
-            color: #2aabee;
-            font-size: 14px;
-            font-weight: 600;
-            margin: 4px 0 6px 0;
-        }
-        .sub-text {
-            color: #88998d;
-            font-size: 11px;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-        }
+        .title { font-size: 19px; font-weight: 800; line-height: 1.3; }
+        .channel-name { color: #2aabee; font-size: 14px; font-weight: 600; margin: 4px 0; }
+        .sub-text { color: #88998d; font-size: 11px; text-transform: uppercase; }
         .live-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: #e63946;
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 10px;
-            font-weight: bold;
+            position: absolute; top: 16px; right: 16px;
+            background: #e63946; color: #fff; padding: 4px 8px;
+            border-radius: 6px; font-size: 10px; font-weight: bold;
         }
+
+        /* DIRECT VIDEO VIEWPORT (Popup area cropped out) */
         .video-box {
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+            width: 100%;
+            height: 240px;
             overflow: hidden;
             border-radius: 12px;
             background: #000;
@@ -71,12 +45,13 @@
         }
         .video-box iframe {
             position: absolute;
-            top: 0;
+            top: -140px;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 480px;
             border: 0;
         }
+
         .action-box {
             background: #111a14;
             border: 1px solid #1f3024;
@@ -90,26 +65,13 @@
             color: #c0b283;
             text-transform: uppercase;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
         .btn-orange {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 13px;
-            background: #ff8c00;
-            color: #000;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-size: 15px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px; width: 100%; padding: 13px;
+            background: #ff8c00; color: #000; text-align: center;
+            text-decoration: none; font-weight: bold; border-radius: 8px;
+            border: none; cursor: pointer; font-size: 15px;
         }
     </style>
 </head>
@@ -123,13 +85,12 @@
         <div class="sub-text">SPORTS LIVE STREAMS & UPDATES</div>
     </div>
 
-    <!-- VIDEO PLAYER WITH SANDBOX (Dusre ke Telegram redirect block) -->
+    <!-- DIRECT VIDEO FRAME -->
     <div class="video-box">
         <iframe 
             src="https://sports-era.github.io/Cricketvaanii/INDvsWI/" 
             allowfullscreen 
-            allow="autoplay; encrypted-media; fullscreen"
-            sandbox="allow-scripts allow-same-origin allow-presentation">
+            allow="autoplay; encrypted-media; fullscreen">
         </iframe>
     </div>
 
@@ -148,4 +109,3 @@
 
 </body>
 </html>
-
