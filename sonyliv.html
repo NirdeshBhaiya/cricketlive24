@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -41,29 +42,20 @@
       display: inline-block;
     }
     .player-container {
-      position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      height: 80vh;
+      min-height: 600px;
       background: #000;
       border-radius: 14px;
       overflow: hidden;
       margin-bottom: 16px;
       border: 1px solid #222;
     }
-    .player-container iframe { width: 100%; height: 100%; border: none; }
-    
-    .intercept-btn {
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      height: 55px;
-      background: transparent;
-      z-index: 99;
-      display: block;
+    .player-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
-
     .tg-banner {
       display: block;
       background: #0088cc;
@@ -76,49 +68,6 @@
       font-size: 0.95rem;
       margin-bottom: 16px;
     }
-    .section-title {
-      color: #f59e0b;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .channel-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .channel-btn {
-      background: #121815;
-      border: 1px solid #1f2e26;
-      padding: 12px;
-      border-radius: 12px;
-      text-align: left;
-      color: #fff;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.2s;
-    }
-    .channel-btn:hover, .channel-btn.active {
-      border-color: #f59e0b;
-    }
-    .channel-btn .title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-    }
-    .channel-btn .sub-text {
-      font-size: 0.65rem;
-      color: #f59e0b;
-      text-transform: uppercase;
-    }
   </style>
 </head>
 <body>
@@ -130,51 +79,18 @@
     <p>SPORTS LIVE STREAMS &amp; UPDATES</p>
   </div>
 
+  <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-banner">
+    👉 Join Telegram: @CricketLiveMatch24
+  </a>
+
+  <!-- पूरा लाइव टीवी सिस्टम (सारे Sony चैनल्स के साथ) -->
   <div class="player-container">
-    <iframe id="mainPlayer" src="https://sports-era-eight.vercel.app" allowfullscreen></iframe>
-    <a href="https://t.me/CricketLiveMatch24" target="_blank" class="intercept-btn"></a>
+    <iframe id="mainPlayer" src="https://sports-era-eight.vercel.app" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
   </div>
 
   <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-banner">
     👉 Join Telegram: @CricketLiveMatch24
   </a>
-
-  <div class="section-title">📺 LIVE CHANNELS</div>
-
-  <div class="channel-grid">
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn active">
-      <div class="title">Sony Ten 1 HD ★</div>
-      <div class="sub-text">SONYLIV SPORTS</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Sony Ten 1 ★</div>
-      <div class="sub-text">SONYLIV SPORTS</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Sony Ten 2 HD ★</div>
-      <div class="sub-text">SONYLIV SPORTS</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Sony Ten 2 ★</div>
-      <div class="sub-text">SONYLIV SPORTS</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Sony Ten 3 HD ★</div>
-      <div class="sub-text">SONYLIV HINDI</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Sony Ten 3 ★</div>
-      <div class="sub-text">SONYLIV HINDI</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Sony Ten 5 HD ★</div>
-      <div class="sub-text">SONYLIV SPORTS</div>
-    </a>
-    <a href="https://t.me/CricketLiveMatch24" class="channel-btn">
-      <div class="title">Star Sports 1 Hindi ★</div>
-      <div class="sub-text">LIVE CRICKET</div>
-    </a>
-  </div>
 
 </body>
 </html>
