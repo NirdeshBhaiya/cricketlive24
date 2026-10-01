@@ -27,31 +27,30 @@
       color: #38bdf8;
     }
 
-    /* Video player frame - Orange button ko kaatne ke liye */
+    /* Video player frame */
     .video-box {
       position: relative;
       width: 100%;
-      height: 250px; /* Is height se sirf video player aayega, orange button niche cut jayega */
+      height: 380px; /* Perfect height taaki match na kate */
       overflow: hidden;
       border-radius: 14px;
       background-color: #000;
       border: 1px solid #334155;
       box-shadow: 0 8px 25px rgba(0,0,0,0.8);
     }
-    
     .video-box iframe {
       position: absolute;
-      top: -150px; /* Upar ka title banner gayab */
+      top: -155px; /* Upar ka banner cut karne ke liye */
       left: 0;
       width: 100%;
-      height: 700px;
+      height: 600px;
       border: 0;
     }
 
-    /* Sirf Aapka Telegram Button */
+    /* Aapka Telegram Button */
     .telegram-btn {
       display: inline-block;
-      margin-top: 18px;
+      margin-top: 20px;
       padding: 15px 32px;
       background: linear-gradient(135deg, #0088cc, #00a8ff);
       color: #ffffff;
@@ -60,10 +59,6 @@
       font-weight: bold;
       border-radius: 50px;
       box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-      transition: transform 0.2s ease;
-    }
-    .telegram-btn:hover {
-      transform: scale(1.02);
     }
   </style>
 </head>
@@ -72,7 +67,7 @@
   <div class="container">
     <h1>🏏 IND vs WI Live Match</h1>
 
-    <!-- Sirf Live Video Screen -->
+    <!-- Live Match Screen -->
     <div class="video-box">
       <iframe 
         src="https://sports-era.github.io/INDvsWI/" 
@@ -81,7 +76,7 @@
       </iframe>
     </div>
 
-    <!-- Sirf Aapka Telegram Channel Link -->
+    <!-- Aapka Official Telegram Button -->
     <a href="https://t.me/CricketLiveMatch24" target="_blank" class="telegram-btn">
       👉 Join Telegram Channel
     </a>
