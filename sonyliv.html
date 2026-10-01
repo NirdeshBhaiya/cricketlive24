@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sony LIV Live Channels - Cricket Live 24</title>
+  <title>Cricket Live 24 - Sony LIV Full HD</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: #0b0f0e; color: #fff; padding: 12px; }
+    body { background-color: #080d0b; color: #fff; padding: 10px; }
     
     .header-card {
       background: linear-gradient(135deg, #111a16, #16241f);
       border: 1px solid #1f362b;
       border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
       position: relative;
     }
-    .header-card h2 { font-size: 1.15rem; color: #fff; margin-bottom: 3px; }
-    .header-card .sub { color: #f59e0b; font-size: 0.9rem; font-weight: 600; }
+    .header-card h2 { font-size: 1.15rem; color: #fff; }
+    .header-card .sub { color: #f59e0b; font-size: 0.85rem; font-weight: 600; margin-top: 2px; }
     .badge {
       position: absolute;
-      top: 14px;
+      top: 12px;
       right: 14px;
       background: #dc2626;
       color: #fff;
@@ -30,141 +30,61 @@
       border-radius: 6px;
     }
 
-    .player-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 12px;
-      border: 1px solid #222;
-      position: relative;
-    }
-    .player-box iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .now-playing {
-      background: #141c18;
-      border: 1px solid #1f362b;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      color: #f59e0b;
-      margin-bottom: 14px;
-      font-weight: 600;
-    }
-
-    .section-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .channel-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .channel-btn {
-      background: #131b17;
-      border: 1px solid #23382d;
-      border-radius: 10px;
-      padding: 12px 10px;
-      text-align: left;
-      color: #fff;
-      cursor: pointer;
-      outline: none;
-    }
-    .channel-btn.active {
-      border-color: #f59e0b;
-      background: #1a2720;
-    }
-    .channel-btn .c-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-    .channel-btn .c-desc {
-      font-size: 0.65rem;
-      color: #f59e0b;
-      text-transform: uppercase;
-    }
-
-    .tg-btn {
+    .tg-banner {
       display: block;
       background: #0088cc;
       color: #fff;
       text-align: center;
       text-decoration: none;
-      padding: 12px;
+      padding: 11px;
       border-radius: 10px;
       font-weight: 600;
       font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    /* Pura Sony LIV Live TV System with All 22 Channels */
+    .tv-wrapper {
+      width: 100%;
+      height: 85vh;
+      min-height: 650px;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #1f362b;
+    }
+    .tv-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
 
   <div class="header-card">
-    <span class="badge">● LIVE</span>
+    <span class="badge">● LIVE 24x7</span>
     <h2>CRICKET LIVE 24</h2>
-    <div class="sub">Sony LIV Sports Live Feeds</div>
+    <div class="sub">@CricketLiveMatch24 • All Sony Sports Channels</div>
   </div>
 
-  <div class="player-box">
-    <!-- बिना जबरन टेलीग्राम वाले डायरेक्ट स्पोर्ट्स प्लेयर -->
-    <iframe id="tvPlayer" src="https://streamed.su/watch/cricket" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
-  </div>
-
-  <div class="now-playing" id="statusText">
-    📺 Now Playing: Sony Ten 1 HD
-  </div>
-
-  <div class="section-title">⚡ SELECT SONY CHANNELS</div>
-
-  <div class="channel-grid">
-    <button class="channel-btn active" onclick="switchChannel('Sony Ten 1 HD', 'https://streamed.su/watch/cricket')">
-      <div class="c-name">Sony Ten 1 HD ★</div>
-      <div class="c-desc">English Sports Live</div>
-    </button>
-
-    <button class="channel-btn" onclick="switchChannel('Sony Ten 2 HD', 'https://streamed.su/watch/cricket')">
-      <div class="c-name">Sony Ten 2 HD ★</div>
-      <div class="c-desc">Sports & Events</div>
-    </button>
-
-    <button class="channel-btn" onclick="switchChannel('Sony Ten 3 HD (Hindi)', 'https://streamed.su/watch/cricket')">
-      <div class="c-name">Sony Ten 3 HD ★</div>
-      <div class="c-desc">Hindi Commentary</div>
-    </button>
-
-    <button class="channel-btn" onclick="switchChannel('Sony Ten 5 HD', 'https://streamed.su/watch/cricket')">
-      <div class="c-name">Sony Ten 5 HD ★</div>
-      <div class="c-desc">Global Sports HD</div>
-    </button>
-  </div>
-
-  <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-btn">
-    👉 Join Telegram Channel (@CricketLiveMatch24)
+  <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-banner">
+    👉 Join Telegram: @CricketLiveMatch24
   </a>
 
-  <script>
-    function switchChannel(name, url) {
-      document.getElementById('tvPlayer').src = url;
-      document.getElementById('statusText').innerText = "📺 Now Playing: " + name;
-      
-      const buttons = document.querySelectorAll('.channel-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
-    }
-  </script>
+  <!-- Saare Channels + Audio + Video (External Telegram Redirect Blocked) -->
+  <div class="tv-wrapper">
+    <iframe 
+      src="https://sports-era-eight.vercel.app" 
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture" 
+      sandbox="allow-scripts allow-same-origin allow-forms"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <a href="https://t.me/CricketLiveMatch24" target="_blank" class="tg-banner" style="margin-top: 10px;">
+    👉 Join Telegram: @CricketLiveMatch24
+  </a>
 
 </body>
 </html>
-
